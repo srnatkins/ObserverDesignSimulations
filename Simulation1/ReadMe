@@ -71,7 +71,7 @@ findC0.m        Function handle computes C0=C*[inverse of exp(-A(tau))].
                         tau -> time delay
                 Output: C0
 
-findE1.m      Function handles computes E and the inverse of E (which is notated as E1). 
+findE.m      Function handles computes E and the inverse of E (which is notated as E1). 
               Expression for E is given in Eqn. (8) of text. We use MATLAB's integral function for approximating the integral described in (8)
               Input: h
               Output: E and E1 (inverse of E)
