@@ -129,6 +129,8 @@ getds                 Computes the values of $\delta_c$, $\delta_d$, $\delta_e$,
 
 Runsimulation1.m     Generates what x and epsilon should be based upon Theorem 2.3
                      Within this code various inputs needed for the function handles above are written. 
+                     Then function handles are called. Then x is approximated based upon Eqn (12) from Theorem 2.3. 
+                     Comparison plots between x and the estimator of x are then generated. 
 
 
 
