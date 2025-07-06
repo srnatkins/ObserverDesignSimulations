@@ -10,10 +10,6 @@ tau1 = 1.5
 tau2 = 1.7
 tau3 = 2.25
 eps = [1,2,3]
-%x0 =[10;4;0.5;0.25;0]
-%x0 = [1,1,1,1,1]';
-%x0 = [50;25;1;1;1]
-%x0 =[1;20;20;5;10]
 x0 = [1;-2;3;-4;5];
 %computing solution to x and saving values for plotting purposes
 [tplot,x]= xsolve(tint,eps,k,x0);
