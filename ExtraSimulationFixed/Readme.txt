@@ -41,12 +41,20 @@ difLi          Function handle generates the delay differential equation present
 
 yhist.m        stores the history function used for the delay differential equation described in difLi (yhist =[0,1,0,1]^T)
 
-Lsolve.m      Function handle used for numerically solving dynamical system generated from difLi. Numerical solver used was dde23
-                Inputs: vector t=[t0,tf] and delay tau
+Lsolve.m      Function handle used for numerically solving dynamical system generated from difLi.  
+                 Input: vector t=[t0,tf] and time delay tau
               When calling dde23 settings for the relative tolerance, absolute tolerance, and maximum stepsize are adjusted via ddeset command.
               Additionally, @yhist is an input for dde23 
+                  Output: t1, L11, L21, sol1
+                          t1    -> time vector whose entries correspond to the nodes used in partitioning time interval [t0,tf]
+                          L11   -> Approximation of the solution to the  first dde equation given in (59) at the time values given in time entries to t1
+                          L21   -> Approximation of the solution to the  second dde equation given in (59) at the time values given in time entries to t1
+                          sol1  -> L11 and L21 combined (makes things easier for the function handled described below)
+             
+interpolatL.m Function handle calls Lsolve and then interpolates the numerical approximation of the delayed differential equation via MATLAB's spline function. 
+                Input: t=[t0,tf] and time delay tau
+                Output: interpolated functions L11 and L21 
 
-interpolatL.m Function handle used for interpolating the numerical solution generated from Lsolve. MATLAB's spline command is used for interpolation
 
 findC0.m      Function handle computes C0=C*[inverse of exp(-A(tau))]. 
                 Inputs: C and tau
@@ -59,13 +67,17 @@ findE.m      Function handles computes E and the inverse of E (which is notated 
               Input: h
               Output: E and E1 (inverse of E)
 
-getbeta.m    Function handle used for generated beta_{*} w
-             Computation is split into two cases in which Case 1 is if Remark 3.7 holds can be applied and Case 2 is otherwise. 
-             In the later case Eqn. 57 is used for storing \beta_{3i} which is then stored and used to compute beta_* (called betastar in m file) based upon Eqn. 9. 
-             Inputs: t (partitioned time vector), delay tau, tau1, and h (tau1 and h are from remark 3.7) 
-             Output: betastar (returns values of betastar at time points represented in components of t)
+getbeta.m    Function handle used for generated beta_{*} 
+             First interpolateL is called. Then computations for \beta_{*} (notated as betastar within the code) is split into 2 cases. 
+             Case 1: The Inputs h, tau, and tau1 are chosen to where tau1 is greater than or equal to tau+h (ie the case in which Remark 3.7 is being used). 
+                     For this case \beta_{*}=\beta_{**}=\beta_3(tau1) where the expression of \beta_3(t) is given in Eqn (57). 
+                     Note: this case should also ensure that \beta_{**} has a left inverse but this is checked later within the text. 
+             Case 2: Otherwise \beta_{31} computed based upon equation (57), and then betastar is set based upon Eqn (9) of text that is betastar=beta_{31}(t-tau1).
+                     Note in Case 2, betastar requires timer interval [t0,tf] to be partitioned. In this case time is partitioned by subdividing [t0,tf] into a fixed number of equally spaced nodes with mesh                      size being 0.1. Consequently, betastar is stored as an array with components relating to approximations of \beta_{*} valued at the nodes.  
+             Inputs: t=[t0,tf], tau, tau1, and h
+             Output: betastar
 
-beta1solve.m Function handle used for computing beta1 from Eqn 8    
+beta1solve.m Function handle used for computing beta1 from Eqn 8  
              Inputs: tint=[t0,tf], tau, h
              Output: time vector t and beta1
 
@@ -73,6 +85,9 @@ getmustar.m  Function handle constructs \mu_* (written as mustar in codes). Comp
              The later case has mustar computed based upon Eqn (10)
 
 getMS.m      Function isn't used but would related to computations for what would be needed in Assumption 5.1/Theorem 5.2. This is more so important with regard to Problems of the form Eqn. (29)
+
+main.m       Script file that has the input settings as described at the top of the Readme file and calls the function handles above to generate an estimator x_u and \epsilon_u via Eqn (13) (note this is the same as equation 12 since \delta_a,\delta_b, gamma_{a1} are set to 0). 
+             File prints values of \epsilon_u (which is labled as epscheck) and plots xu which is compared to the true solution x to demonstrate fixed time estimation. 
              
 
                             
