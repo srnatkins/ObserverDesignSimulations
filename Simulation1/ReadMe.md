@@ -8,7 +8,7 @@ Some examples include the following:
 $\delta_a$, $\delta_b$,...,$\delta_f$ were renotated as "da", "db", ..., "df" respectively, 
 Vector $\epsilon$ was renotated as "eps",  
 $\lambda_i$ was renotated as the ith entry of vector "lam",
-$\beta_{**}$ (see Remark 3.7) is renotated as "betastar",
+\beta_{**} (see Remark 3.7) is renotated as "betastar",
 $\mu_{**}$ (see Remark 3.7) is renotated as "mustar" 
 $L_{∗∗}$ (see Remark 3.7) is renotated as "L" 
 $E^{-1}$ (inverse of E) is renotated as E1
@@ -111,14 +111,14 @@ interpolatedbeta1.m   Function handle interpolated beta1i through MATLAB's splin
                       Outputs Interpolating functions Beta11 Beta12 Beta13 through spline interpolation
                       Currently this function is NOT being used. 
 
-getbetastar.m         Computing $\beta_{**}$. That is the code uses Remark 3.7 instead of using eqn (9) to approximate $\beta_*$
+getbetastar.m         Computing \beta_{**}. That is the code uses Remark 3.7 instead of using eqn (9) to approximate $\beta_*$
                       Inputs: tint, k, tau, h, tau1, tau2, tau3
                               tau, h, tau1, tau2, and tau3 are the constants that are picked to where there is some positive integer N (in this case N=3) where
                                     \tau_i \geq h+tau for i = 1,...,N  (here \geq is latex command meaning greater than or equalt to) 
                               This condition is needed in order to use Remark 3.7. Within this code \beta_{31}, \beta_{32}, and \beta_{33} are computed via beta3solve then  
                               satisfy taui is greater than or equal to h+tau for all i=1,2,3. 
                       Outputs: betastar, t, beta11, beta12, beta13  (t, beta11, beta12, beta13 are same as described in beta1solve.m)
-                      $\beta_{**}$ is needed for computing $L_{**}$
+                      \beta_{**} is needed for computing L_{**}
 
 getds                 Computes the values of $\delta_c$, $\delta_d$, $\delta_e$, and $\delta_f$
                       From the article $\delta_c$ is given in Eqn (7), and $\detal_d$, $\delta_{e}$,and $\delta_f$ are given in Eqn. (11).
