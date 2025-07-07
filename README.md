@@ -1,0 +1,3 @@
+Repository relates to simulations demonstrated in Sections 7.1 and 7.2 of the article titled "Fixed and almost fixed time estimation under unknown parameters in measurements" (Authors: Summer Atkins, Michael Malisoff, and Frederic Mazenc). 
+The simulations provided are all MATLAB files. An extra simulation related to fixed time convergence is also given in which case estimators for a specific problem of the form Eqn. (3) are based upon variation of parameters approaches as described in Remark 6.3 of article. 
+The repository is currently divided into 3 folders: Simulation1, Simulation2, and ExtraSimulationFixed. Each of these folders have detailed Readme files specific to the simulations. 
