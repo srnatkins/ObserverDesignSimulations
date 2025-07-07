@@ -10,7 +10,7 @@ Vector $\epsilon$ was renotated as "eps",
 $\lambda_i$ was renotated as the ith entry of vector "lam",
 $\beta_{**}$ (see Remark 3.7) is renotated as "betastar",
 $\mu_{**}$ (see Remark 3.7) is renotated as "mustar" 
-$\L_{∗∗}$ (see Remark 3.7) is renotated as "L" 
+$L_{∗∗}$ (see Remark 3.7) is renotated as "L" 
 $E^{-1}$ (inverse of E) is renotated as E1
 $\rho_i(t)$ is renotated as rhoi whose 
 
