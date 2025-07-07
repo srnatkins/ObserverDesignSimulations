@@ -1,7 +1,7 @@
 This repository gives the files needed to compute the simulations performed in Section 7.1 of the article titled "Fixed and almost fixed time estimation under unknown parameters in measurements" (Authors: Summer Atkins, Michael Malisoff, and Frederic Mazenc). 
 The simulations provided are all MATLAB files. The simulations relate to a specific dynamical system of a single-link robotic manipulator coupled to a DC motor, which is of the form Eqn. (3) from the text.
 Be advised that these codes are written specifically for this problem.
-Within these files we take advantage of $\gamma_{ai}$'s being set to zero (this has an effect on how the $\gammma_i$'s is computed). 
+Within these files we take advantage of $\gamma_{ai}$'s being set to zero (this has an effect on how the $\gamma_i$'s is computed). 
 Additionally, h, $\tau$, $\tau_1$, $\tau_2$, and $\tau_3$ were chosen to where Remark 3.7 can be leveraged.
 Note: Some objects (variables, functions, parameters) used within the article were renoteded with in these codes for shorthand purposes and also because some symbols like "*" cannot be part of the name of a variable in MATLAB.
 Some examples include the following: 
