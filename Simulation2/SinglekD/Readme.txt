@@ -112,6 +112,16 @@ Assumption5_1.m
 
             %kd>0 chosen such that kd*betabarnew<1 which is a condition for Assumption 5.1. 
 
+getbeta.m    Function handle used for generated beta_{*} 
+             First interpolateL is called. Then computations for \beta_{*} (notated as betastar within the code) is split into 2 cases. 
+             Case 1: The Inputs h, tau, and tau1 are chosen to where tau1 is greater than or equal to tau+h (ie the case in which Remark 3.7 is being used). 
+                     For this case \beta_{*}=\beta_{**}=\beta_3(tau1) where the expression of \beta_3(t) is given in Eqn (57). 
+                     Note: this case should also ensure that \beta_{**} has a left inverse but this is checked later within the text. 
+             Case 2: Otherwise \beta_{31} computed based upon equation (57), and then betastar is set based upon Eqn (9) of text that is betastar=beta_{31}(t-tau1).
+                     Note in Case 2, betastar requires timer interval [t0,tf] to be partitioned. In this case time is partitioned by subdividing [t0,tf] into a fixed number of equally spaced nodes with mesh                      size being 0.1. Consequently, betastar is stored as an array with components relating to approximations of \beta_{*} valued at the nodes.  
+             Inputs: t=[t0,tf], tau, tau1, and h
+             Output: betastar
+
 beta1solve.m Function handle used for computing beta1 from Eqn 8  
              Inputs: tint=[t0,tf], tau, h
              Output: time vector t and beta1
