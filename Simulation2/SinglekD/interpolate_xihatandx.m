@@ -1,5 +1,5 @@
 function [xihat, x,xihat1,x1] = interpolate_xihatandx(tint,eps,u0,kd)
-%returns inter
+%returns interpolated x and \hat\xi via spline interpolation
 [tnew,u,xihat,x] = usolve(tint,eps,u0,kd);
 xinodes = transpose(xihat);
 xnodes = transpose(x);
