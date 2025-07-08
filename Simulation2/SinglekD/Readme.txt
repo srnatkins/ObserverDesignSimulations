@@ -133,8 +133,12 @@ getDs.m      Function computes D_#,D_*, and D_{**} (it returns D_# and D_{**}) b
               Inputs: tint,eps,u0,kd,tau,tau1,h
               Outputs: Dsharp, Ddoublestar
 
-getxhatandepshat.m
+getxhatandepshat.m  Function constructs estimator \hat{x}, and \epsilon_* via Theorem 5.2. \hat{\epsilon} is then computed by taking (\epsilon_*) L_*
+                        Inputs: tint,eps,u0,kd,Lstar, tau,tau1,h
+                        Outputs: tvec,xhat,epshat  where tvec represent the partition of time interval tint=[t0,T_*].
 
+
+                                    
 
 
             
