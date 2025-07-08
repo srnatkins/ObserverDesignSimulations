@@ -81,7 +81,7 @@ beta1solve.m Function handle used for computing beta1 from Eqn 8
              Inputs: tint=[t0,tf], tau, h
              Output: time vector t and beta1
 
-getmustar.m  Function handle constructs \mu_* (written as mustar in codes). Computation is splint into two cases where case 1 relates to Remark 3.7 and Case 2 is otherwise. 
+getmustar.m  Function handle constructs \mu_* (written as mustar in codes). Computation is split into two cases where case 1 relates to Remark 3.7 and Case 2 is otherwise. 
              The later case has mustar computed based upon Eqn (10)
 
 getMS.m      Function isn't used but would related to computations for what would be needed in Assumption 5.1/Theorem 5.2. This is more so important with regard to Problems of the form Eqn. (29)
