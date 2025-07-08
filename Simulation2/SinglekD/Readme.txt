@@ -89,28 +89,30 @@ findE.m      Function handles computes E and the inverse of E (which is notated 
               Input: h
               Output: E and E1 (inverse of E)
 
-Assumption5_1.m 
-%Function returns betastar,Lstar, betabarnew, and kd for simulation 2
-%INPUTS: 
-%       tint        time interval [0,T_*]
-%       tau         delay
-%       h    
-%       tau1
-%%NOTE it is imporitant that inputs are chosen to where
-% T_^*>h+tau1+tau hold as this is one condition needed for Assumption 2.2 
-%OUTPUTS:
-%       betastar    constructed based upon assumption 2
-%                   where beta3 is constructed via Remark 12  
-%       Lstar       the left inverse of betastar           
-%       betabarnew  constructed via equation (67)
-%       kd          set kd=1/(2betabarnew) (must check that kd>0)
+Assumption5_1.m             
+            Function returns betastar,Lstar, betabarnew, and kd for simulation 2
+            %INPUTS: 
+            %       tint        time interval [0,T_*]
+            %       tau         delay
+            %       h    
+            %       tau1
+            %%NOTE it is imporitant that inputs are chosen to where
+            % T_^*>h+tau1+tau hold as this is one condition needed for Assumption 2.2 
+            %OUTPUTS:
+            %       betastar    constructed based upon assumption 2
+            %                   where beta3 is constructed via Remark 12  
+            %       Lstar       the left inverse of betastar           
+            %       betabarnew  constructed via equation (67)
+            %       kd          set kd=1/(2betabarnew) (must check that kd>0)
 
-%Based upon sim. 2 computations, betastar is a constant function so
-%betastar is returned as number. Additionally, Lstar=1/betastar is a number 
-%which exists so long as betastar is nonzero.  This is along with 
-% T_*>h+tau1 will make it to where Assumption 2.2 to be satisfied
+            %Based upon sim. 2 computations, betastar is a constant function so
+            %betastar is returned as number. Additionally, Lstar=1/betastar is a number 
+            %which exists so long as betastar is nonzero.  This is along with 
+            % T_*>h+tau1 will make it to where Assumption 2.2 to be satisfied
 
-%kd>0 chosen such that kd*betabarnew<1 which is a condition for Assumption 5.1. 
+            %kd>0 chosen such that kd*betabarnew<1 which is a condition for Assumption 5.1. 
+
+
 
 
 
