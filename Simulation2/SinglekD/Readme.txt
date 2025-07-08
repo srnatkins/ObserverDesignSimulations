@@ -129,7 +129,11 @@ beta1solve.m Function handle used for computing beta1 from Eqn 8
 getmustar.m  Function handle constructs \mu_* (written as mustar in codes). Computation is split into two cases where case 1 relates to Remark 3.7 and Case 2 is otherwise. 
              The later case has mustar computed based upon Eqn (10)
 
+getDs.m      Function computes D_#,D_*, and D_{**} (it returns D_# and D_{**}) based upon eqn. 37
+              Inputs: tint,eps,u0,kd,tau,tau1,h
+              Outputs: Dsharp, Ddoublestar
 
+getxhatandepshat.m
 
 
 
