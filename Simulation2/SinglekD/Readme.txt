@@ -47,4 +47,19 @@ usolve.m   This function solves ode system (30)-(31) as written in difu
 
 
 
+
+findC0.m        Function handle computes C0=C*[inverse of exp(-A(tau))]. 
+                Inputs: C and tau
+                        C = [1,0,0,0,0]  
+                        tau -> time delay
+                Output: C0
+
+findE.m      Function handles computes E and the inverse of E (which is notated as E1). 
+              Expression for E is given in Eqn. (8) of text. We use MATLAB's integral function for approximating the integral described in (8)
+              Input: h
+              Output: E and E1 (inverse of E)
+
+
+
+
             
