@@ -10,7 +10,10 @@ tau=0.125;
 gap=5;   % this parameter is used to construct a time interval that will have T_*>h+tau+tau1
 eps =1;  %epsilon
 
+
 Some function handles constructed here 
+main1.m     MAIN function handle that runs the problem and plots various figures. All of the functions below are called at some point when running the problem. 
+
 difu.m      Constructs system of differential equations relating to Eqn (30) and (31) from Text
             %Code writes system of 4 differential equations
             % u = [\hat\xi_1,\hat\xi_2,x_1,x_2]^{\top} 
@@ -43,6 +46,8 @@ usolve.m   This function solves ode system (30)-(31) as written in difu
              u     -> a length(t) by 4 matrix with the (i,j) being  u(i,j)=u_j(t_i)
              xihat -> a lenght(t) by 2 matrix representing the first two columns of u
              x     -> length(t) by 2 matrix representing the last two columns of u
+
+interpolate_xihatandx.m   Uses spline interpolation to interpolate \hat{\xi} and x after runing usolve.m 
 
 ysolve.m        Function handle computes y based upon the spline interpolation of the state 
                 Inputs:   tint, eps, u0, kd (same description as above), and tau (time delay) 
@@ -136,6 +141,14 @@ getDs.m      Function computes D_#,D_*, and D_{**} (it returns D_# and D_{**}) b
 getxhatandepshat.m  Function constructs estimator \hat{x}, and \epsilon_* via Theorem 5.2. \hat{\epsilon} is then computed by taking (\epsilon_*) L_*
                         Inputs: tint,eps,u0,kd,Lstar, tau,tau1,h
                         Outputs: tvec,xhat,epshat  where tvec represent the partition of time interval tint=[t0,T_*].
+
+getDelDd.m  % Based upon diffu \Delta(\xi(t),t)=[kdsin(\xi_1(t)),0]
+            % We had manually input \Delta and \Delta_d into diffu in order to numerically solve the system [\hat{\xi},x]. Now we want to take the numerical solution obtained and extract what \Delta_d is and \mathcal{D}_d which are described in equation (32). 
+
+%output 
+%       Deld -> \Delta_d(x(t),t)
+%       Dd   -> \mathcal{D}_d(x_t,t)
+
 
 
                                     
