@@ -112,6 +112,13 @@ Assumption5_1.m
 
             %kd>0 chosen such that kd*betabarnew<1 which is a condition for Assumption 5.1. 
 
+beta1solve.m Function handle used for computing beta1 from Eqn 8  
+             Inputs: tint=[t0,tf], tau, h
+             Output: time vector t and beta1
+
+getmustar.m  Function handle constructs \mu_* (written as mustar in codes). Computation is split into two cases where case 1 relates to Remark 3.7 and Case 2 is otherwise. 
+             The later case has mustar computed based upon Eqn (10)
+
 
 
 
